@@ -18,15 +18,35 @@
   margin: 0;
   background-color: rgb(99, 97, 97);
 
-  display: none;
+
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: opacity 350ms ease-out;
+}
+
+@keyframes scale-easeOutBounce {
+  0% { transform: scaleY(0); }
+  12% { transform: scaleY(0.11); }
+  24% { transform: scaleY(0.45); }
+  36% { transform: scaleY(1.05); }
+  54% { transform: scaleY(0.80); }
+  74% { transform: scaleY(1.01); }
+  82% { transform: scaleY(0.98); }
+  92% { transform: scaleY(1.01); }
+  96% { transform: scaleY(0.99); }
+  100% { transform: scaleY(1); }
 }
 
 ul.dropdown-menu li:hover {
   background: rgb(47, 46, 46);
 }
 
+
 .visible {
-  display: block;
+  transform: scaleY(1);
+  opacity: 1;
+  animation: scale-easeOutBounce 350ms forwards;
 }
 
 
